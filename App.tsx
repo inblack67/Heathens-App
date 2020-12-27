@@ -1,21 +1,21 @@
+import { ApolloProvider } from '@apollo/client';
 import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Fragment } from 'react';
+import { useApollo } from './src/apollo';
+import Home from './src/components/Home';
+import { Provider as PaperProvider } from 'react-native-paper';
 
-export default function App() {
+export default function App ()
+{
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ApolloProvider client={ useApollo() }>
+      <PaperProvider>
+        <Fragment>
+          <Home />
+          <StatusBar style="auto" />
+        </Fragment>
+      </PaperProvider>
+    </ApolloProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
