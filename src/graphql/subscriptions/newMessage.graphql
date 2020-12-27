@@ -1,0 +1,11 @@
+subscription NewMessageSubscription($channelId: Float!){
+  newMessage(channelId: $channelId){
+    content
+    poster{
+      username
+    }
+    channel{
+      name
+    }
+  }
+}

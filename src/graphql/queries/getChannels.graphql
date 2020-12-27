@@ -1,0 +1,12 @@
+query GetChannelsQuery{
+  getChannels {
+    id
+    desc
+    name
+    messages {
+      poster {
+        name
+      }
+    }
+  }
+}

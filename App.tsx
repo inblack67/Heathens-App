@@ -2,8 +2,8 @@ import { ApolloProvider } from '@apollo/client';
 import { StatusBar } from 'expo-status-bar';
 import React, { Fragment } from 'react';
 import { useApollo } from './src/apollo';
-import Home from './src/components/Home';
 import { Provider as PaperProvider } from 'react-native-paper';
+import { AppNavigation } from './src/routes/homeStack';
 
 export default function App ()
 {
@@ -11,7 +11,7 @@ export default function App ()
     <ApolloProvider client={ useApollo() }>
       <PaperProvider>
         <Fragment>
-          <Home />
+          <AppNavigation />
           <StatusBar style="auto" />
         </Fragment>
       </PaperProvider>

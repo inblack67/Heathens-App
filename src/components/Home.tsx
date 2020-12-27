@@ -1,11 +1,12 @@
 import React from 'react';
 import { View, Text } from 'react-native';
-import { useHelloQuery } from '../generated/graphql';
 import Preloader from './Preloader';
+import Navigation from './Navigation';
+import { useHelloQueryQuery } from '../generated/graphql';
 
-const Home = () =>
+const Home = ( { navigation }: any ) =>
 {
-    const { loading, data } = useHelloQuery();
+    const { loading, data } = useHelloQueryQuery();
 
     if ( loading )
     {
@@ -18,7 +19,8 @@ const Home = () =>
         <View>
             <Text>
                 Hello Friend
-               </Text>
+             </Text>
+            <Navigation navigation={ navigation } />
         </View>
     );
 };

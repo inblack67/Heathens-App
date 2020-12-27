@@ -1,0 +1,6 @@
+query GetMeQuery{
+  getMe{
+    name
+    email
+  }
+}
